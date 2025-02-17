@@ -98,7 +98,7 @@ DATABASES = {
             'driver': 'ODBC Driver 17 for SQL Server',  # Make sure the driver is installed
             'extra_params': 'TrustServerCertificate=yes;',  # Optional: other ODBC connection options
             'conn_max_age': 600,  # Maximum age of a connection in seconds (10 minutes)
-            'timeout': 20,  # Connection timeout in seconds
+            'timeout': 60,  # Connection timeout in seconds
              'extra_options': {
         'odbc_log': 'True',  
     },
@@ -150,18 +150,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import pyodbc
-
-conn = pyodbc.connect(
-    'DRIVER={ODBC Driver 17 for SQL Server};'
-    'SERVER=45.113.189.67;'
-    'DATABASE=QlikView;'
-    'UID=sa;'
-    'PWD=Rfpl@1234;'
-)
-
-cursor = conn.cursor()
-cursor.execute('SELECT 1')
-row = cursor.fetchone()
-print(row)
 
