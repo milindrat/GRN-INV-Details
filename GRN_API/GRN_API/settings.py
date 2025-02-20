@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-rahilhue&3^2*tkr-ko)35sy%8neoo2^=+(4oo@8glm1$@r%g$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -103,6 +103,7 @@ DATABASES = {
         'odbc_log': 'True',  
     },
         },
+        
     }
 }
 
